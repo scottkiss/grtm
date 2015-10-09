@@ -31,6 +31,35 @@ func main() {
 ~
 ```
 
+## Create normal goroutine function with params
+
+```golang
+package main
+
+import (
+        "fmt"
+        "github.com/scottkiss/grtm"
+        "time"
+       )
+
+func normal() {
+    fmt.Println("i am normal goroutine")
+}
+
+func funcWithParams(args ...interface{}) {
+    fmt.Println(args[0].([]interface{})[0].(string))
+    fmt.Println(args[0].([]interface{})[1].(string))
+}
+
+func main() {
+        gm := grtm.NewGrManager()
+        gm.NewGoroutine("normal", normal)
+        fmt.Println("main function")
+        gm.NewGoroutine("funcWithParams", funcWithParams, "hello", "world")
+        time.Sleep(time.Second * time.Duration(5))
+}
+```
+
 ## Create long loop goroutine then stop it
 
 ```golang
@@ -48,7 +77,7 @@ func myfunc() {
 }
 
 func main() {
-        gm := grtm.NewGrManager()
+gm := grtm.NewGrManager()
         gm.NewLoopGoroutine("myfunc", myfunc)
         fmt.Println("main function")
         time.Sleep(time.Second * time.Duration(40))
