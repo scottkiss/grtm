@@ -34,7 +34,6 @@ func (gm *GrManager) NewLoopGoroutine(name string, fc interface{}, args ...inter
 		for {
 			select {
 			case info := <-this.grchannelMap.grchannels[name].msg:
-				fmt.Println(info)
 				taskInfo := strings.Split(info, ":")
 				signal, gid := taskInfo[0], taskInfo[1]
 				if gid == strconv.Itoa(int(this.grchannelMap.grchannels[name].gid)) {
