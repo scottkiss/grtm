@@ -1,5 +1,6 @@
 # about grtm 
-======
+[![Build Status](https://travis-ci.org/scottkiss/grtm.svg?branch=master)](https://travis-ci.org/scottkiss/grtm)
+
 grtm is a tool to manage golang goroutines.use this can start or stop a long loop goroutine.
 
 ## Getting started
