@@ -25,5 +25,5 @@ func Test_StopLoopGoroutine(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	time.Sleep(time.Duration(50) * time.Second)
+	time.Sleep(time.Duration(5) * time.Second)
 }
